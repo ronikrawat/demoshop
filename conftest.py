@@ -3,6 +3,8 @@ from POM.homepage import Homepage
 from POM.login import LoginPage
 from POM.registration import Registration
 from pytest import fixture
+from utilites.lib import SeleniumWrapper
+
 
 def pytest_addoption(parser):
     # parser.addoption("--env",action= "store",default="test",dest="env")
@@ -11,7 +13,7 @@ def pytest_addoption(parser):
 
 @fixture
 def driver(request):
-    browser = request.configure.option.browser
+    browser = request.config.option.browser
     if browser.upper() == "CHROME":
         _driver = webdriver.Chrome()
     elif browser.upper() == "EDGE":
@@ -29,8 +31,8 @@ def driver(request):
 @fixture
 def pages(driver):
     class Pages:
-        loginpage = LoginPage(driver)
         homepage = Homepage(driver)
+        loginpage = LoginPage(driver)
         registration = Registration(driver)
 
     return Pages()
