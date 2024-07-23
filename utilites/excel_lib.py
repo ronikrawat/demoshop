@@ -3,7 +3,8 @@ from xlrd import open_workbook
 
 def set_locator(worksheet):
     def _read_locator(cls):
-        book = open_workbook(r"C:\Users\ronik\Desktop\demoshop\pythonProject2\utilites\objects.xls")
+        book = open_workbook(
+            r"C:\Users\ronik\Desktop\demoshop\pythonProject2\utilites\objects.xls")
         sheet = book.sheet_by_name(worksheet)
         used_rows = sheet.nrows
         for i in range(1, used_rows):
@@ -15,7 +16,8 @@ def set_locator(worksheet):
 
 
 def get_header(worksheet, test_function):
-    book = open_workbook(r"C:\Users\ronik\Desktop\demoshop\pythonProject2\utilites\testdata.xls")
+    book = open_workbook(
+        r"C:\Users\ronik\Desktop\demoshop\pythonProject2\utilites\testdata.xls")
     sheet = book.sheet_by_name(worksheet)
     used_lines = sheet.nrows
     for i in range(used_lines):
@@ -26,7 +28,8 @@ def get_header(worksheet, test_function):
 
 
 def get_data(worksheet, testcase):
-    book = open_workbook(r"C:\Users\ronik\Desktop\demoshop\pythonProject2\utilites\testdata.xls")
+    book = open_workbook(
+        r"C:\Users\ronik\Desktop\demoshop\pythonProject2\utilites\testdata.xls")
     sheet = book.sheet_by_name(worksheet)
     used_rows = sheet.nrows
     data = []

@@ -49,4 +49,3 @@ class SeleniumWrapper:
                 sleep(1)
                 continue
         return False
-

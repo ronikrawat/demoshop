@@ -8,7 +8,10 @@ from utilites.lib import SeleniumWrapper
 
 def pytest_addoption(parser):
     # parser.addoption("--env",action= "store",default="test",dest="env")
-    parser.addoption("--browser", action="store", default="chrome", dest="browser")
+    parser.addoption("--browser",
+                     action="store",
+                     default="chrome",
+                     dest="browser")
 
 
 @fixture
@@ -30,6 +33,7 @@ def driver(request):
 
 @fixture
 def pages(driver):
+
     class Pages:
         homepage = Homepage(driver)
         loginpage = LoginPage(driver)
